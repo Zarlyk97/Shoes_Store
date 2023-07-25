@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_store/constants/inkwell.dart';
-import 'package:shoes_store/constants/product_item.dart';
+
+import 'package:shoes_store/product.dart';
 import 'package:shoes_store/theme/app_colors.dart';
 
 import 'package:shoes_store/theme/app_texts.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({
+    super.key,
+  });
 
-  final String title;
+  //final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> images = [
-    "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1a6395c2-4b30-4df0-b43e-4575a57b8478/air-max-goaterra-2-mens-boots-5mjdGp.png",
-    "https://static.nike.com/a/images/t_default/rorabfpoffxpmekxfaq7/manoa-leather-mens-boots-Mj42BL.png",
-    "https://static.nike.com/a/images/t_default/7a39151f-ebd2-4824-9afb-59e52c46a54d/sfb-6-leather-mens-boot-l3Ngv1.png"
-  ];
+  // List<String> images = [
+  //   "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1a6395c2-4b30-4df0-b43e-4575a57b8478/air-max-goaterra-2-mens-boots-5mjdGp.png",
+  //   "https://static.nike.com/a/images/t_default/rorabfpoffxpmekxfaq7/manoa-leather-mens-boots-Mj42BL.png",
+  //   "https://static.nike.com/a/images/t_default/7a39151f-ebd2-4824-9afb-59e52c46a54d/sfb-6-leather-mens-boot-l3Ngv1.png"
+  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,19 +205,20 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                width: 360,
-                height: 235,
-                child: ListView.builder(
-                  itemCount: 3,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => ProductItem(
-                    productName: "Jordan 14 Retro Gym Red \n Toro (GS) $index",
-                    imageUrl: images[index],
-                    price: 169 + index,
-                  ),
-                ),
-              ),
+              ProductItem2(),
+              // SizedBox(
+              //   width: 360,
+              //   height: 235,
+              //   child: ListView.builder(
+              //     itemCount: 3,
+              //     scrollDirection: Axis.horizontal,
+              //     itemBuilder: (context, index) => ProductItem(
+              //       productName: "Jordan 14 Retro Gym Red \n Toro (GS) $index",
+              //       imageUrl: images[index],
+              //       price: 169 + index,
+              //     ),
+              //   ),
+              // ),
               const SizedBox(
                 height: 30,
               ),
