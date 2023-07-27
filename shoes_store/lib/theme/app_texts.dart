@@ -11,6 +11,7 @@ class AppTextStyle {
       TextStyle(fontSize: 16, fontWeight: FontWeight.w700);
   static const sifra = TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
   static const blackText = TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
+  static const navbarText = TextStyle(fontFamily: 'Amaranth',fontSize: 19, fontWeight: FontWeight.w700);
   static const text = ("Jordan 14 Retro Gym Red \nToro (GS)");
   static const text1 = ("Lowest Ask ");
   static const text2 = ("\$169");

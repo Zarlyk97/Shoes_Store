@@ -251,19 +251,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 tabs: const [
                   GButton(
                     icon: Icons.home_outlined,
-                    text: 'menu',
+                    text: 'menu',textStyle: AppTextStyle.navbarText,
                   ),
                   GButton(
                     icon: Icons.crop_free_outlined,
-                    text: 'Scan',
+                    text: 'scan',textStyle: AppTextStyle.navbarText,
                   ),
                   GButton(
                     icon: Icons.search,
-                    text: 'Search',
+                    text: 'search',textStyle: AppTextStyle.navbarText,
                   ),
                   GButton(
                     icon: Icons.person_outline,
-                    text: 'Profile',
+                    text: 'profile',textStyle: AppTextStyle.navbarText,
                   ),
                 ],
                 selectedIndex: _selectedIndex,
