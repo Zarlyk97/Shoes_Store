@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
+<<<<<<< HEAD
 
+=======
+import 'package:line_icons/line_icons.dart';
+import 'package:shoes_store/constants/inkwell.dart';
+>>>>>>> 64042a654905e5311673c4b759eab40608a7a8e4
 import 'package:shoes_store/product.dart';
 import 'package:shoes_store/theme/app_texts.dart';
 
@@ -243,12 +248,17 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.only(bottom: 10, left: 20, right: 20),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(60),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
+<<<<<<< HEAD
                 blurRadius: 15,
                 color: Colors.black.withOpacity(.2),
+=======
+                blurRadius: 20,
+                color: Color(0xff2020300D),
+>>>>>>> 64042a654905e5311673c4b759eab40608a7a8e4
               )
             ],
           ),
@@ -257,8 +267,8 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:
                   const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
               child: GNav(
-                rippleColor: Colors.grey[300]!,
-                hoverColor: Colors.grey[100]!,
+                rippleColor: Colors.grey!,
+                hoverColor: Color(0xff2020300D)!,
                 gap: 8,
                 activeColor: Colors.black,
                 iconSize: 24,
@@ -266,10 +276,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 duration: const Duration(milliseconds: 400),
                 tabBackgroundColor: Colors.grey[100]!,
-                color: Colors.black,
+                color: Colors.black45,
                 tabs: const [
                   GButton(
+                    
                     icon: Icons.home_outlined,
+<<<<<<< HEAD
                     text: 'menu',
                     textStyle: TextStyle(
                         fontSize: 16,
@@ -299,6 +311,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         fontFamily: "LilitaOne-Regular"),
+=======
+                    text: 'menu',textStyle: AppTextStyle.navbarText,
+                  ),
+                  GButton(
+                    icon: LineIcons.barcode,
+                    text: 'scan',textStyle: AppTextStyle.navbarText,
+                  ),
+                  GButton(
+                    icon: Icons.search_outlined,
+                    text: 'search',textStyle: AppTextStyle.navbarText,
+                  ),
+                  GButton(
+                    icon: Icons.person_outline,
+                    text: 'account',textStyle: AppTextStyle.navbarText,
+>>>>>>> 64042a654905e5311673c4b759eab40608a7a8e4
                   ),
                 ],
                 selectedIndex: _selectedIndex,
