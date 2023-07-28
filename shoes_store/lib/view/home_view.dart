@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:shoes_store/constants/inkwell.dart';
 import 'package:shoes_store/product.dart';
 import 'package:shoes_store/theme/app_texts.dart';
@@ -224,12 +225,12 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(60),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
                 blurRadius: 20,
-                color: Colors.black.withOpacity(.2),
+                color: Color(0xff2020300D),
               )
             ],
           ),
@@ -238,8 +239,8 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:
                   const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
               child: GNav(
-                rippleColor: Colors.grey[300]!,
-                hoverColor: Colors.grey[100]!,
+                rippleColor: Colors.grey!,
+                hoverColor: Color(0xff2020300D)!,
                 gap: 8,
                 activeColor: Colors.black,
                 iconSize: 24,
@@ -247,23 +248,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 duration: const Duration(milliseconds: 400),
                 tabBackgroundColor: Colors.grey[100]!,
-                color: Colors.black,
+                color: Colors.black45,
                 tabs: const [
                   GButton(
+                    
                     icon: Icons.home_outlined,
                     text: 'menu',textStyle: AppTextStyle.navbarText,
                   ),
                   GButton(
-                    icon: Icons.crop_free_outlined,
+                    icon: LineIcons.barcode,
                     text: 'scan',textStyle: AppTextStyle.navbarText,
                   ),
                   GButton(
-                    icon: Icons.search,
+                    icon: Icons.search_outlined,
                     text: 'search',textStyle: AppTextStyle.navbarText,
                   ),
                   GButton(
                     icon: Icons.person_outline,
-                    text: 'profile',textStyle: AppTextStyle.navbarText,
+                    text: 'account',textStyle: AppTextStyle.navbarText,
                   ),
                 ],
                 selectedIndex: _selectedIndex,
