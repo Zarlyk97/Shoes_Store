@@ -250,8 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 tabBackgroundColor: Colors.grey[100]!,
                 color: Colors.black45,
                 tabs: const [
-                  GButton(
-                    
+                  GButton(                    
                     icon: Icons.home_outlined,
                     text: 'menu',textStyle: AppTextStyle.navbarText,
                   ),
