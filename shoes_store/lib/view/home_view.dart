@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:shoes_store/constants/inkwell.dart';
+
 import 'package:shoes_store/product.dart';
 import 'package:shoes_store/theme/app_texts.dart';
+
+import '../constants/inkwell.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -17,6 +19,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   bool _isPressed = false;
+  bool isVisible = false;
 
   void _handlePress() {
     setState(() {
@@ -68,145 +71,161 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 15,
               ),
-              const Row(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text(AppTextStyle.sizeAll)),
-                  Padding(
-                    padding: EdgeInsets.only(left: 250),
-                    child: Icon(Icons.keyboard_arrow_down),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 88),
-                child: Text(
-                  AppTextStyle.jordan,
-                  style: AppTextStyle.jordantext,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 19),
-                child: FittedBox(
-                  child: Row(
-                    children: [
-                      Text(AppTextStyle.condition),
-                      Text('New', style: AppTextStyle.newtext),
-                      SizedBox(width: 5),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 7),
-                        child: Text('.'),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(AppTextStyle.ticker),
-                      SizedBox(width: 5),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 7),
-                        child: Text('.'),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        AppTextStyle.authenticc,
-                        style: TextStyle(color: Colors.green),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 250),
-                child: Text(AppTextStyle.informations,
-                    style: AppTextStyle.information),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 23),
+              GestureDetector(
+                onTap: () {
+                  isVisible = !isVisible;
+                  setState(() {});
+                },
                 child: Row(
                   children: [
-                    Text('Style'),
-                    SizedBox(
-                      width: 70,
+                    const Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text(AppTextStyle.sizeAll)),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 250),
+                      child: Icon(isVisible
+                          ? Icons.keyboard_arrow_up
+                          : Icons.keyboard_arrow_down),
                     ),
-                    Text('487471-006', style: AppTextStyle.sifra)
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 23),
-                child: Row(
-                  children: [
-                    Text('Colorway'),
-                    SizedBox(
-                      width: 43,
-                    ),
-                    Text(AppTextStyle.black, style: AppTextStyle.blackText)
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 23),
-                child: Row(
-                  children: [
-                    Text(AppTextStyle.price),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text("\$190"),
                   ],
                 ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 23),
-                child: Row(
+              Visibility(
+                visible: isVisible,
+                child: const Column(
                   children: [
-                    Text(AppTextStyle.date),
-                    SizedBox(
-                      width: 20,
+                    Padding(
+                      padding: EdgeInsets.only(right: 88),
+                      child: Text(
+                        AppTextStyle.jordan,
+                        style: AppTextStyle.jordantext,
+                      ),
                     ),
-                    Text("07/02/2020"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 19),
+                      child: FittedBox(
+                        child: Row(
+                          children: [
+                            Text(AppTextStyle.condition),
+                            Text('New', style: AppTextStyle.newtext),
+                            SizedBox(width: 5),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 7),
+                              child: Text('.'),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(AppTextStyle.ticker),
+                            SizedBox(width: 5),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 7),
+                              child: Text('.'),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              AppTextStyle.authenticc,
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 250),
+                      child: Text(AppTextStyle.informations,
+                          style: AppTextStyle.information),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 23),
+                      child: Row(
+                        children: [
+                          Text('Style'),
+                          SizedBox(
+                            width: 70,
+                          ),
+                          Text('487471-006', style: AppTextStyle.sifra)
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 23),
+                      child: Row(
+                        children: [
+                          Text('Colorway'),
+                          SizedBox(
+                            width: 43,
+                          ),
+                          Text(AppTextStyle.black,
+                              style: AppTextStyle.blackText)
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 23),
+                      child: Row(
+                        children: [
+                          Text(AppTextStyle.price),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Text("\$190"),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 23),
+                      child: Row(
+                        children: [
+                          Text(AppTextStyle.date),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text("07/02/2020"),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 23),
+                      child: Inkwell(),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 200),
+                      child: Text(
+                        AppTextStyle.related,
+                        style: AppTextStyle.information,
+                      ),
+                    ),
                   ],
-                ),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 23),
-                child: Inkwell(),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 200),
-                child: Text(
-                  AppTextStyle.related,
-                  style: AppTextStyle.information,
                 ),
               ),
               const SizedBox(
@@ -221,14 +240,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
+        padding: const EdgeInsets.only(bottom: 10, left: 20, right: 20),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                blurRadius: 20,
+                blurRadius: 15,
                 color: Colors.black.withOpacity(.2),
               )
             ],
@@ -252,18 +271,34 @@ class _MyHomePageState extends State<MyHomePage> {
                   GButton(
                     icon: Icons.home_outlined,
                     text: 'menu',
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "LilitaOne-Regular"),
                   ),
                   GButton(
                     icon: Icons.crop_free_outlined,
                     text: 'Scan',
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "LilitaOne-Regular"),
                   ),
                   GButton(
                     icon: Icons.search,
                     text: 'Search',
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "LilitaOne-Regular"),
                   ),
                   GButton(
                     icon: Icons.person_outline,
                     text: 'Profile',
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "LilitaOne-Regular"),
                   ),
                 ],
                 selectedIndex: _selectedIndex,

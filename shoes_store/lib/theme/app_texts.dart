@@ -15,7 +15,7 @@ class AppTextStyle {
   static const text1 = ("Lowest Ask ");
   static const text2 = ("\$169");
   static const sizeAll = ("Size All");
-  static const jordan = (" 'Jordan 14 Retro Gym\n Red To',");
+  static const jordan = ("Jordan 14 Retro Gym\n Red To,");
   static const condition = ("Condition:");
   static const ticker = ("Ticker:JB-JO1RBGRBW");
   static const authenticc = ("100% Authentic");
